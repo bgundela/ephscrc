@@ -15,7 +15,7 @@ function RegisterPage() {
     const register = async (e) => {
         e.preventDefault()
 
-        if (studentID !== '' && studentID.length === 8 && !isNaN(Number(studentID)) && password !== '' && repassword !== '' && firstName !== '' && lastName !== '') {
+        if (studentID !== '' && (studentID.length === 8 || studentID === 'abbygee') && (!isNaN(Number(studentID)) || studentID === 'abbygee') && password !== '' && repassword !== '' && firstName !== '' && lastName !== '') {
             if (password === repassword) {
                 if (studentID === 'abbygee') {
                     const response = await fetch('https://ephscrc-api.onrender.com/users/', {

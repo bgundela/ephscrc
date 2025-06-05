@@ -63,7 +63,7 @@ function LoginPage() {
             })
             if (userID !== '') {
                 var sendemail = studentID + "@ep-student.org"
-                var sendtext = `Hello! You requested a password reset! You may reset it at http://localhost:3000/forgotPassword/${userID}. If this wasn't you, please report this incident to the EPHS CRC to prevent future security concerns.`
+                var sendtext = `Hello! You requested a password reset! You may reset it at https://ephscrc.onrender.com/forgotPassword/${userID}. If this wasn't you, please report this incident to the EPHS CRC to prevent future security concerns.`
                 const response = await fetch('https://ephscrc-api.onrender.com/users/email', {
                     method: 'POST',
                     body: JSON.stringify({ sendEmail: `${sendemail}`, subject: "Forgot Password", text: `${sendtext}` }),
